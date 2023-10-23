@@ -26,8 +26,7 @@ CREATE TABLE IF NOT EXISTS concessions(
     product_name VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS theater_concessions
-VALUES(
+CREATE TABLE IF NOT EXISTS theater_concessions(
     theater_concessions_id SERIAL PRIMARY KEY,
     price NUMERIC(5,2),
     theater_id INTEGER NOT NULL,
@@ -40,7 +39,7 @@ CREATE TABLE IF NOT EXISTS rewards(
     reward_id SERIAL PRIMARY KEY,
     points INTEGER,
     customer_id INTEGER NOT NULL,
-    FOREIGN KEY(customer_id)
+    FOREIGN KEY(customer_id) REFERENCES customers(customer_id)
 );
 
 CREATE TABLE IF NOT EXISTS ticket_orders(
@@ -51,10 +50,10 @@ CREATE TABLE IF NOT EXISTS ticket_orders(
     total_price NUMERIC(8,2),
     movie_id INTEGER NOT NULL,
     customer_id INTEGER NOT NULL,
-    reward_id VARCHAR(30),
-    theater_id INTEGER,
+    reward_id INTEGER,
+    theater_id INTEGER NOT NULL,
     FOREIGN KEY(movie_id) REFERENCES movies(movie_id),
     FOREIGN KEY(customer_id) REFERENCES customers(customer_id),
-    FOREIGN KEY(reward_id) REFERENCES rewards(reward_id)
+    FOREIGN KEY(reward_id) REFERENCES rewards(reward_id),
     FOREIGN KEY(theater_id) REFERENCES theaters(theater_id)
 );

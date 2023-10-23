@@ -1,4 +1,4 @@
-INSERT INTO customer
+INSERT INTO customers
 VALUES(
     1001,
     'Matt',
@@ -7,7 +7,7 @@ VALUES(
     'mattemail@gmail.com'
 );
 
-INSERT INTO customer
+INSERT INTO customers
 VALUES(
     1002,
     'Lee',
@@ -33,7 +33,7 @@ VALUES(
 INSERT INTO movies
 VALUES(
     9001,
-    'Taylor Swift: The Eras Tour'
+    'Taylor Swift: The Eras Tour',
     'PG-13',
     'AMC',
     3001
@@ -42,7 +42,7 @@ VALUES(
 INSERT INTO movies
 VALUES(
     9002,
-    'Die Hard'
+    'Die Hard',
     'R',
     '20th Century Studios',
     3002

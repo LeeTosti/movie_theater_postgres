@@ -46,5 +46,5 @@ def insert_data(sql_filepath):
             print(f'Command Skipped: {msg}')
 
 if __name__ == '__main__':
-    create_tables('')
-    insert_data('')
+    create_tables('/Users/lisatosti/Documents/GitHub/movie_theater_postgres/movie_theater_create.sql')
+    insert_data('/Users/lisatosti/Documents/GitHub/movie_theater_postgres/movie_theater_insert.sql')
