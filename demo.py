@@ -8,6 +8,7 @@ user = getenv("USERNAME")
 password = getenv("PASSWORD")
 server = getenv("SERVER")
 
+
 pg_connection = psycopg2.connect(
     dbname=user,
     user=user,
